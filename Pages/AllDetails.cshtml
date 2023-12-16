@@ -1,0 +1,42 @@
+﻿@page
+@model StudentsInformation.Pages.AllDetailsModel
+@{
+    ViewData["Title"] = "Student Information Page";
+}
+<h2>Student Information Page</h2>
+<div>
+    <table class="table">
+        <tr>
+            <th scope="col">
+                Student Name
+            </th>
+            <th scope="col">
+                City
+            </th>
+            <th scope="col">
+                Course
+            </th>
+            <th scope="col">
+                Lecturer Name
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.LecturerName)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
