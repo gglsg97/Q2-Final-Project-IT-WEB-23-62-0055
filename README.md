@@ -1,1 +1,1 @@
-Q2 iv) Queries and Answers are included in a folder
+Q2 iv) Database file, Queries and Answers are included in a folder
