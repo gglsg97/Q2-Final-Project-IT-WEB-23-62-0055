@@ -1,0 +1,64 @@
+iv) Write SQL Queries for following scenarios.(Create a text file and add queries and results)
+
+
+
+A. Get all the information of all Students.
+
+Query - 
+	SELECT * FROM Student;
+
+Result - 
+	1	Kasun Gamage	Kandy	2
+	2	Daniel Sam	Jaffna	3
+	3	Hansi Silva	Colombo	1
+	4	Ranidu Herath	Matara	3
+	5	Praneeth Wijesinghe	Kandy	4
+	6	Nuwani Herath	Rathnapura	1
+
+
+
+B. Select student id, name and city from students who are from the ‘kandy’.
+
+Query - 
+	SELECT StudentId,Name,City 
+	FROM Student 
+	WHERE City='Kandy'; 
+
+Result - 
+	1	Kasun Gamage	Kandy
+	5	Praneeth Wijesinghe	Kandy
+
+
+
+C. Update the City as 'Galle' of the student whose id equals to 4 .
+
+Query - 
+	UPDATE Student 
+	SET City='Galle' 
+	WHERE StudentId=4;
+
+Result - 
+	1	Kasun Gamage	Kandy	2
+	2	Daniel Sam	Jaffna	3
+	3	Hansi Silva	Colombo	1
+	4	Ranidu Herath	Galle	3
+	5	Praneeth Wijesinghe	Kandy	4
+	6	Nuwani Herath	Rathnapura	1
+
+
+
+D. Get all the information of all students with their course names.
+
+Query - 
+	SELECT S.StudentId,S.Name,S.City,S.CourseID,C.Name 
+	FROM Student AS S 
+	LEFT JOIN Course AS C 
+	ON S.CourseID = C.CourseID;
+
+Result - 
+	1	Kasun Gamage	Kandy	2	Graphic Design
+	2	Daniel Sam	Jaffna	3	Mobile App Development
+	3	Hansi Silva	Colombo	1	Web Development
+	4	Ranidu Herath	Matara	3	Mobile App Development
+	5	Praneeth Wijesinghe	Kandy	4	Java
+	6	Nuwani Herath	Rathnapura	1	Web Development
